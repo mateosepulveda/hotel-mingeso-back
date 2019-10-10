@@ -14,7 +14,7 @@ public class Room {
     private String number;
     private String floor;
     private String description;
-    private List<Client> clientList;
+    //private List<Client> clientList;
     private String price;
     private boolean occupied;
 
@@ -22,9 +22,17 @@ public class Room {
         this.number = number;
         this.floor = floor;
         this.description = description;
-        this.clientList = new ArrayList<Client>();
+        //this.clientList = new ArrayList<Client>();
         this.price = price;
         this.occupied = false;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public String getNumber() {
+        return this.number;
     }
 
     public void setDescription(String description) {
@@ -35,7 +43,7 @@ public class Room {
         this.price = price;
     }
 
-    public void emptyClientList() {
+/*    public void emptyClientList() {
         this.clientList.clear();
         this.occupied = false;
     }
@@ -45,5 +53,5 @@ public class Room {
             return false;
         }
         return true;
-    }
+    }*/
 }

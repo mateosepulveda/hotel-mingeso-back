@@ -1,7 +1,8 @@
 package com.example.mingeso.models;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
-import javax.persistence.*;
+import org.springframework.data.annotation.Id;
+//import javax.persistence.*;
 import java.util.List;
 
 @Data
