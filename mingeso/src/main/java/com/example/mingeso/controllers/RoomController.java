@@ -23,13 +23,6 @@ public class RoomController {
         return room;
     }
 
-/*    @CrossOrigin
-    @RequestMapping("/createRoom")
-    public String create(@RequestParam String number, @RequestParam String floor, @RequestParam String description, @RequestParam String price) {
-        Room r = roomRepository.save(new Room(number, floor, description, price));
-        return r.toString();
-    }*/
-
     @RequestMapping(value = "/getById/{id}", method = RequestMethod.GET)
     public Room getRoomById(@PathVariable("id") String id) {
         return roomRepository.findByid(id);
@@ -59,14 +52,6 @@ public class RoomController {
         return roomRepository.save(room);
     }
 
-/*    @RequestMapping(value = "/updateById/{id}", method = RequestMethod.PUT)
-    public Room updateRoomById(@PathVariable("id") String id, @RequestParam String number, @RequestParam String description, @RequestParam String price) {
-        Room r = roomRepository.findByid(id);
-        r.setDescription(description);
-        r.setPrice(price);
-        return roomRepository.save(r);
-    }*/
-
     @RequestMapping(value = "/updateByNumber/{number}", method = RequestMethod.PUT)
     @ResponseBody
     public Room updateRoomByNumber(@PathVariable String number, @RequestBody Room room) {
@@ -75,14 +60,6 @@ public class RoomController {
         }
         return roomRepository.save(room);
     }
-
-/*    @RequestMapping(value = "/updateByNumber/{number}", method = RequestMethod.PUT)
-    public Room updateRoomByNumber(@PathVariable("number") String number, @RequestParam String description, @RequestParam String price) {
-        Room r = roomRepository.findByNumber(number);
-        r.setDescription(description);
-        r.setPrice(price);
-        return roomRepository.save(r);
-    }*/
 
     @CrossOrigin
     @RequestMapping(value = "/deleteById/{id}", method = RequestMethod.DELETE)

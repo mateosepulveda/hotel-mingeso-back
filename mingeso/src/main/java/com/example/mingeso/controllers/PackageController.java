@@ -10,7 +10,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/package")
+@RequestMapping("/packages")
 public class PackageController {
 
     @Autowired
@@ -22,13 +22,6 @@ public class PackageController {
         packageRepository.save(pack);
         return pack;
     }
-
-/*    @CrossOrigin
-    @RequestMapping("/createPackage")
-    public String create(@RequestParam String name, @RequestParam String description, @RequestParam String price) {
-        Package p = packageRepository.save(new Package(name, description, price));
-        return p.toString();
-    }*/
 
     @RequestMapping(value = "/getById/{id}", method = RequestMethod.GET)
     public Package getPackageById(@PathVariable("id") String id) {
@@ -54,15 +47,6 @@ public class PackageController {
         return packageRepository.save(pack);
     }
 
-/*    @RequestMapping(value = "/updateById/{id}", method = RequestMethod.PUT)
-    public Package updatePackageById(@PathVariable("id") String id, @RequestParam String name, @RequestParam String description, @RequestParam String price) {
-        Package p = packageRepository.findByid(id);
-        p.setName(name);
-        p.setDescription(description);
-        p.setPrice(price);
-        return packageRepository.save(p);
-    }*/
-
     @RequestMapping(value = "/updateByName/{name}", method = RequestMethod.PUT)
     @ResponseBody
     public Package updatePackageByName(@PathVariable String name, @RequestBody Package pack) {
@@ -71,14 +55,6 @@ public class PackageController {
         }
         return packageRepository.save(pack);
     }
-
-/*    @RequestMapping(value = "/updateByName/{name}", method = RequestMethod.PUT)
-    public Package updatePackageByName(@PathVariable("name") String name, @RequestParam String description, @RequestParam String price) {
-        Package p = packageRepository.findByName(name);
-        p.setDescription(description);
-        p.setPrice(price);
-        return roomRepository.save(p);
-    }*/
 
     @CrossOrigin
     @RequestMapping(value = "/deleteById/{id}", method = RequestMethod.DELETE)
