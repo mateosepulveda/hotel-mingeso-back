@@ -1,5 +1,6 @@
 package com.example.mingeso.controllers;
 
+import com.example.mingeso.models.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -7,6 +8,7 @@ import com.example.mingeso.models.Room;
 import com.example.mingeso.repositories.RoomRepository;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -15,10 +17,33 @@ public class RoomController {
 
     @Autowired
     private RoomRepository roomRepository;
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public List<Room> getAllClients() {
+        List<Room> all = roomRepository.findAll();
+        return all;
+    }
 
+
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Room one(@PathVariable("id") String id) {
+        Room room = roomRepository.findByid(id);
+        return room;
+    }
+
+
+    @RequestMapping(value = "/{id}/2", method = RequestMethod.PUT)
+    @ResponseBody
+    public Room updateClient(@PathVariable String id, @RequestBody Room room) {
+        if (!room.getId().equals(id)) {
+            return null;
+        }
+        return this.roomRepository.save(room);
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.POST)
     @CrossOrigin
-    @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public Room createRoom(@Valid @RequestBody Room room) {
+    public Room create(@Valid @RequestBody Room room) {
         roomRepository.save(room);
         return room;
     }
@@ -27,9 +52,30 @@ public class RoomController {
     public Room getRoomById(@PathVariable("id") String id) {
         return roomRepository.findByid(id);
     }
+        @ResponseStatus(value = HttpStatus.OK)
+        @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+        @ResponseBody
+        @CrossOrigin
+    public void delete(@PathVariable String id) {
+        roomRepository.delete(roomRepository.findByid(id));
+    }
 
-    @RequestMapping(value = "/getByNumber/{number}", method = RequestMethod.GET)
-    public Room getRoomByNumber(@PathVariable("number") String number) {
+
+
+
+
+
+
+/*    @RequestMapping(value = "/", method = RequestMethod.POST)
+    @CrossOrigin
+    public Room create(@Valid @RequestBody Room room) {
+        roomRepository.save(room);
+        return room;
+    }
+*/
+
+    /*@RequestMapping("/getByNumber")
+    public Room getRoomByNumber(@RequestParam String number) {
         return roomRepository.findByNumber(number);
     }
 
@@ -37,9 +83,10 @@ public class RoomController {
     public List<Room> getRoomByFloor(@PathVariable("floor") String floor) {
         return roomRepository.findByFloor(floor);
     }
-
-    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
-    public List<Room> getAllRooms() {
+*/
+/*
+    @RequestMapping("/getAll")
+    public List<Room> getAll() {
         return roomRepository.findAll();
     }
 
@@ -75,6 +122,7 @@ public class RoomController {
         Room r = roomRepository.findByNumber(number);
         roomRepository.delete(r);
     }
+*/
 
     @CrossOrigin
     @RequestMapping(value = "/deleteAll", method = RequestMethod.DELETE)
@@ -82,3 +130,4 @@ public class RoomController {
         roomRepository.deleteAll();
     }
 }
+

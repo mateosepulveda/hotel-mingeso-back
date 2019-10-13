@@ -4,19 +4,23 @@ import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "packages")
+import java.util.List;
+
+@Document(collection = "boxes")
 @Getter @Setter
-public class Package {
+public class Box {
     @Id
     private String id;
     private String name;
     private String description;
     private String price;
+    private List<Service> serviceList;
 
-    public Package(String name, String description, String price) {
+    public Box(String name, String description, String price, List<Service> serviceList) {
         this.name = name;
         this.description = description;
         this.price = price;
+        this.serviceList=serviceList;
     }
 
     public String getId() {

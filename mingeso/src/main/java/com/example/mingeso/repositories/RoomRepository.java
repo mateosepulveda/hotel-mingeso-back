@@ -7,7 +7,11 @@ import java.util.List;
 
 @Repository
 public interface RoomRepository extends MongoRepository<Room, String> {
+
+   Room findByid(String id);
+
+    @Override
+    List<Room> findAll();
     Room findByNumber(String number);
-    Room findByid(String id);
     List<Room> findByFloor(String floor);
 }
