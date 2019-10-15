@@ -38,8 +38,17 @@ public class Booking {
         return this.startDate;
     }
 
+
     public String getEndDate() {
         return this.endDate;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
     }
 
     public void setStartDate(String startDate) {

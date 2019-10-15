@@ -17,10 +17,11 @@ public class Voucher {
     @Id
     private String id;
     private String price;
+    private String startDate;
+    private String endDate;
     private List<Service> services;
     private Box boxUsed;
     private Room roomUsed;
-    private Client owner ;
     private Boolean paidOut;
 
     public Voucher (String price, List<Service> services, Box boxUsed, Room roomUsed,Client owner ){
@@ -29,7 +30,6 @@ public class Voucher {
         this.boxUsed=boxUsed;
         this.roomUsed=roomUsed;
         this.paidOut=true;
-        this.owner=owner;
     }
 
        public String getId() {
@@ -48,17 +48,20 @@ public class Voucher {
         return this.boxUsed;
     }
 
-    public Client getOwner() {
-        return this.owner;
-    }
         public Room getRoomUsed() {
         return this.roomUsed;
     }
-    
-   
-      
-      
 
+
+
+
+    public String getStartDate() {
+        return this.startDate;
+    }
+
+    public String getEndDate() {
+        return this.endDate;
+    }
     public void setPrice(String price) {
          this.price=price;
         return;
@@ -75,11 +78,15 @@ public class Voucher {
         return;
     }
 
-    public void setOwner(Client owner) {
 
-         this.owner=owner;
-        return;
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
     }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
         public void setRoomUsed(Room roomUsed) {
         this.roomUsed= roomUsed;
 

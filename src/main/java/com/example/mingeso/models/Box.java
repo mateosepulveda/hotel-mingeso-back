@@ -33,6 +33,11 @@ public class Box {
 public List<Service> getServiceList() {
         return this.serviceList;
     }
+
+    public String getPrice() {
+        return this.price;
+    }
+
     public void setName(String name) {
         this.name = name;
     }

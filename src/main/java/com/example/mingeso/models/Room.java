@@ -26,7 +26,7 @@ public class Room {
         this.description = description;
         this.clientList = clientList;
         this.price = price;
-        this.occupied = false;
+        this.occupied = true;
     }
 
     public String getId() {

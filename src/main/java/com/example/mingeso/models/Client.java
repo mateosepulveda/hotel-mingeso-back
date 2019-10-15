@@ -29,6 +29,7 @@ public class Client {
        this.rut=rut;
        this.mail=mail;
        this.phone=phone;
+       this.roomOwner=false;
 
    }
     public String getId() {
