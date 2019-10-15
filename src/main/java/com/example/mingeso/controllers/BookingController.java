@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.mingeso.models.Booking;
 import com.example.mingeso.repositories.BookingRepository;
 import javax.validation.Valid;
+import java.lang.reflect.Array;
 import java.util.List;
 
 @RestController
@@ -17,9 +18,12 @@ public class BookingController {
     private BookingRepository bookingRepository;
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public Booking createBooking(@Valid @RequestBody Booking booking) {
-        bookingRepository.save(booking);
-        return booking;
+    public void createBooking(@Valid @RequestBody List<Booking> bookings) {
+        for(Booking booking:bookings) {
+            bookingRepository.save(booking);
+
+        }
+        return;
     }
 
     @CrossOrigin
