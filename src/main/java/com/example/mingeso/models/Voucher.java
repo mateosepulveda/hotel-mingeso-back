@@ -7,6 +7,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
+import static java.sql.JDBCType.NULL;
+
 @Data
 @Getter
 @Setter
@@ -18,15 +20,16 @@ public class Voucher {
     private List<Service> services;
     private Box boxUsed;
     private Room roomUsed;
-    private Client Owner ;
+    private Client owner ;
     private Boolean paidOut;
 
-    public Voucher (String price, List<Service> services, Box boxUsed, Room roomUsed ){
+    public Voucher (String price, List<Service> services, Box boxUsed, Room roomUsed,Client owner ){
         this.price=price;
         this.services=services;
         this.boxUsed=boxUsed;
         this.roomUsed=roomUsed;
         this.paidOut=true;
+        this.owner=owner;
     }
 
        public String getId() {
@@ -35,7 +38,7 @@ public class Voucher {
 
     public String getPrice() {
         return this.price;
-p   }
+  }
 
     public List<Service> getServices() {
         return this.services;
@@ -58,23 +61,29 @@ p   }
 
     public void setPrice(String price) {
          this.price=price;
-        return
+        return;
 }
 
-    public void setServices() {
-        this.services;
-    return 
+    public void setServices(List<Service> services) {
+        this.services=services;
+    return ;
     }
 
-    public void setBoxUsed() {
-        return this.boxUsed;
+    public void setBoxUsed(Box boxUsed) {
+
+         this.boxUsed=boxUsed;
+        return;
     }
 
-    public void setOwner() {
-        return this.owner;
+    public void setOwner(Client owner) {
+
+         this.owner=owner;
+        return;
     }
-        public void setRoomUsed() {
-        return this.roomUsed;
+        public void setRoomUsed(Room roomUsed) {
+        this.roomUsed= roomUsed;
+
+        return ;
     }
     
 }

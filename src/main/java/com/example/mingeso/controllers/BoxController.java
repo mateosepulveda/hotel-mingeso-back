@@ -17,7 +17,7 @@ public class BoxController {
     private BoxRepository repository;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public List<Box> getAllClients() {
+    public List<Box> getAllBoxes() {
         List<Box> all = repository.findAll();
         return all;
     }
@@ -30,9 +30,9 @@ public class BoxController {
     }
 
 
-    @RequestMapping(value = "/{id}/2", method = RequestMethod.PUT)
+    @RequestMapping(value = "/{id}/", method = RequestMethod.PUT)
     @ResponseBody
-    public Box updateClient(@PathVariable String id, @RequestBody Box box) {
+    public Box updateBoxes(@PathVariable String id, @RequestBody Box box) {
         if (!box.getId().equals(id)) {
             return null;
         }

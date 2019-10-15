@@ -41,7 +41,7 @@ public class ClientController {
     }
 
 
-    @RequestMapping(value = "/{id}/2", method = RequestMethod.PUT)
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     @ResponseBody
     public Client updateClient(@PathVariable String id, @RequestBody Client client) {
         if (!client.getId().equals(id)) {

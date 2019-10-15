@@ -34,7 +34,7 @@ public class RoomController {
     }
 
     @CrossOrigin
-    @RequestMapping(value = "/{id}/2", method = RequestMethod.PUT)
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     @ResponseBody
     public Room updateRoom(@PathVariable String id, @RequestBody Room room) {
         if (!room.getId().equals(id)) {
