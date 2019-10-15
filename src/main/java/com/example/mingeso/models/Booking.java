@@ -1,12 +1,16 @@
 package com.example.mingeso.models;
 import lombok.Setter;
 import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "bookings")
 @Getter
 @Setter
+@Data
+@NoArgsConstructor
 public class Booking {
     @Id
     private String id;

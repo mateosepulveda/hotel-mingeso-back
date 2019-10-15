@@ -1,5 +1,7 @@
 package com.example.mingeso.controllers;
 
+import com.sun.org.apache.xpath.internal.objects.XObject;
+import org.openqa.selenium.json.Json;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -7,6 +9,7 @@ import com.example.mingeso.models.Booking;
 import com.example.mingeso.repositories.BookingRepository;
 import javax.validation.Valid;
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -19,9 +22,10 @@ public class BookingController {
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public void createBooking(@Valid @RequestBody List<Booking> bookings) {
-        for(Booking booking:bookings) {
+        for(Booking booking:bookings)
+        {
+            System.out.println(booking);
             bookingRepository.save(booking);
-
         }
         return;
     }
@@ -38,12 +42,7 @@ public class BookingController {
         return bookingRepository.findByOwner(owner);
     }
 
-    /*
-    @RequestMapping(value = "/getByRoomNumber/{roomNumber}", method = RequestMethod.GET)
-    public List<Booking> getBookingByRoomNumber(@PathVariable("roomNumber") String roomNumber) {
-        return bookingRepository.findByRoomNumber(roomNumber);
-    }
-    */
+
 
     @CrossOrigin
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
@@ -65,29 +64,19 @@ public class BookingController {
     @RequestMapping(value = "/deleteById/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(value = HttpStatus.OK)
     public void deleteBookingById(@PathVariable("id") String id) {
-        Booking b = bookingRepository.findByid(id);
-        bookingRepository.delete(b);
+            System.out.println("ENTRssssA");
+            bookingRepository.delete(bookingRepository.findByid(id));
     }
 
     @CrossOrigin
     @RequestMapping(value = "/deleteByOwner/{owner}", method = RequestMethod.DELETE)
     public void deleteBookingByOwner(@PathVariable("owner") String owner) {
+        System.out.println("ENTRssssA222");
         List<Booking> listBookings = bookingRepository.findByOwner(owner);
         for (int i = 0; i < listBookings.size(); i++) {
             bookingRepository.delete(listBookings.get(i));
         }
     }
-
-    /*
-    @CrossOrigin
-    @RequestMapping(value = "/deleteByRoomNumber/{roomNumber}", method = RequestMethod.DELETE)
-    public void deleteBookingByRoomNumber(@PathVariable("roomNumber") String roomNumber) {
-        List<Booking> listBookings = bookingRepository.findByRoomNumber(roomNumber);
-        for (int i = 0; i < listBookings.size(); i++) {
-            bookingRepository.delete(listBookings.get(i));
-        }
-    }
-    */
 
     @CrossOrigin
     @RequestMapping(value = "/deleteAll", method = RequestMethod.DELETE)

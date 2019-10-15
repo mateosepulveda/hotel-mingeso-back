@@ -1,6 +1,9 @@
 package com.example.mingeso.models;
 import lombok.Setter;
 import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -8,6 +11,8 @@ import java.util.List;
 
 @Document(collection = "boxes")
 @Getter @Setter
+@Data
+@NoArgsConstructor
 public class Box {
     @Id
     private String id;

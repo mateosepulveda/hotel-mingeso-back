@@ -5,8 +5,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
 //import javax.persistence.*;
 import java.util.List;
-
+import lombok.Data;
+import lombok.NoArgsConstructor;
 @Data
+@NoArgsConstructor
+
 @Document(collection = "clients")
 public class Client {
     @Id
@@ -99,6 +102,8 @@ public class Client {
     this.roomOwner= roomOwner;
         return;
     }
+
+
 }
 
 
