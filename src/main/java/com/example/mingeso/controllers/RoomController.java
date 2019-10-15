@@ -17,6 +17,7 @@ public class RoomController {
 
     @Autowired
     private RoomRepository roomRepository;
+    @CrossOrigin
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<Room> getAllClients() {
         List<Room> all = roomRepository.findAll();
@@ -24,14 +25,14 @@ public class RoomController {
     }
 
 
-
+    @CrossOrigin
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Room one(@PathVariable("id") String id) {
         Room room = roomRepository.findByid(id);
         return room;
     }
 
-
+    @CrossOrigin
     @RequestMapping(value = "/{id}/2", method = RequestMethod.PUT)
     @ResponseBody
     public Room updateClient(@PathVariable String id, @RequestBody Room room) {

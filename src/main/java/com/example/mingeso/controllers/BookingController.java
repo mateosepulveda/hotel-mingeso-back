@@ -22,11 +22,13 @@ public class BookingController {
         return booking;
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/getById/{id}", method = RequestMethod.GET)
     public Booking getBookingById(@PathVariable("id") String id) {
         return bookingRepository.findByid(id);
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/getByOwner/{owner}", method = RequestMethod.GET)
     public List<Booking> getBookingByOwner(@PathVariable("owner") String owner) {
         return bookingRepository.findByOwner(owner);
@@ -39,11 +41,13 @@ public class BookingController {
     }
     */
 
+    @CrossOrigin
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     public List<Booking> getAllBookings() {
         return bookingRepository.findAll();
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
     @ResponseBody
     public Booking updateRoomById(@PathVariable String id, @RequestBody Booking booking) {
