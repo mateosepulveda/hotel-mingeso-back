@@ -17,6 +17,7 @@ public class ClientController {
 
     private ClientRepository repository;
 
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<Client> getAllClients() {
         List<Client> all = repository.findAll();
