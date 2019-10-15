@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 public class MingesoApplicationTests {
 private    RoomRepository roomRepository;
 private EntityManager entityManager ;
-private String nueva=nueva
+private String nueva="nueva";
 
 
     @Test
