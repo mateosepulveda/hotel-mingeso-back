@@ -16,6 +16,7 @@ import static org.junit.Assert.assertEquals;
 public class MingesoApplicationTests {
 private    RoomRepository roomRepository;
 private EntityManager entityManager ;
+private String nueva=nueva
 
 
     @Test
@@ -24,14 +25,14 @@ private EntityManager entityManager ;
         Byte capacity = 2;
         room.setNumber("23");
         room.setFloor("2");
-        room.setDescription("nueva");
+        room.setDescription(nueva);
         room.setPrice("25000");
         room.setClientList(null);
         room.setOccupied(true);
    assertEquals(room.getNumber(),"23");
    assertEquals(room.getClientList(),null);
    assertEquals(room.getFloor(),"2");
-   assertEquals(room.getDescription(),"nueva");
+   assertEquals(room.getDescription(),nueva);
    assertEquals(room.getPrice(),"25000");
 
 
@@ -148,11 +149,11 @@ private EntityManager entityManager ;
     }
     @Test
     public void RoomConstructorTest() {
-       Room room = new Room("23","2","nueva","25000",null);
+       Room room = new Room("23","2",nueva,"25000",null);
    assertEquals(room.getNumber(),"23");
    assertEquals(room.getClientList(),null);
    assertEquals(room.getFloor(),"2");
-   assertEquals(room.getDescription(),"nueva");
+   assertEquals(room.getDescription(),nueva);
    assertEquals(room.getPrice(),"25000");
 
 
