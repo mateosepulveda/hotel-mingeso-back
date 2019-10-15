@@ -23,5 +23,37 @@ public class User {
         this.password=password;
         this.admin= false;
     }
+       public String getId() {
+        return this.id;
+    }
+
+    public String getUsername() {
+        return this.username;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public Boolean getAdmin() {
+        return this.admin;
+    }
+
+   
+    public void setUsername(String username) {
+        this.username=username;
+        return;
+    }
+
+    public void setPassword(String password) {
+        this.password=password ;
+        return;
+    }
+
+    public void setPrice(Boolean admin) {
+        this.admin=admin;
+        return;
+    }
+
 
 }

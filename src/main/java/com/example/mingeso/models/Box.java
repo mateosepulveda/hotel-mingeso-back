@@ -30,7 +30,9 @@ public class Box {
     public String getName() {
         return this.name;
     }
-
+public List<Service> getServiceList() {
+        return this.serviceList;
+    }
     public void setName(String name) {
         this.name = name;
     }
@@ -41,5 +43,9 @@ public class Box {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public void setServiceList(String serviceList) {
+        this.serviceList = serviceList;
     }
 }

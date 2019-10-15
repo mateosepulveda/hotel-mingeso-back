@@ -10,12 +10,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/bookings")
+@CrossOrigin("*")
 public class BookingController {
 
     @Autowired
     private BookingRepository bookingRepository;
 
-    @CrossOrigin
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public Booking createBooking(@Valid @RequestBody Booking booking) {
         bookingRepository.save(booking);

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/rooms")
 public class RoomController {
 
@@ -19,7 +20,7 @@ public class RoomController {
     private RoomRepository roomRepository;
     @CrossOrigin
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public List<Room> getAllClients() {
+    public List<Room> getAllRoom() {
         List<Room> all = roomRepository.findAll();
         return all;
     }
@@ -35,7 +36,7 @@ public class RoomController {
     @CrossOrigin
     @RequestMapping(value = "/{id}/2", method = RequestMethod.PUT)
     @ResponseBody
-    public Room updateClient(@PathVariable String id, @RequestBody Room room) {
+    public Room updateRoom(@PathVariable String id, @RequestBody Room room) {
         if (!room.getId().equals(id)) {
             return null;
         }

@@ -45,10 +45,10 @@ public class Room {
         this.price = price;
     }
 
-  /*  public void emptyClientList() {
+    public void emptyClientList() {
         this.clientList.clear();
         this.occupied = false;
-    }*/
+    }
 
     public boolean clientListIsEmpty() {
         if (clientList.size() > 0) {

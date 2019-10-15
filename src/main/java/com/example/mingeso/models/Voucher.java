@@ -28,4 +28,53 @@ public class Voucher {
         this.roomUsed=roomUsed;
         this.paidOut=true;
     }
+
+       public String getId() {
+        return this.id;
+    }
+
+    public String getPrice() {
+        return this.price;
+p   }
+
+    public List<Service> getServices() {
+        return this.services;
+    }
+
+    public Box getBoxUsed() {
+        return this.boxUsed;
+    }
+
+    public Client getOwner() {
+        return this.owner;
+    }
+        public Room getRoomUsed() {
+        return this.roomUsed;
+    }
+    
+   
+      
+      
+
+    public void setPrice(String price) {
+         this.price=price;
+        return
+}
+
+    public void setServices() {
+        this.services;
+    return 
+    }
+
+    public void setBoxUsed() {
+        return this.boxUsed;
+    }
+
+    public void setOwner() {
+        return this.owner;
+    }
+        public void setRoomUsed() {
+        return this.roomUsed;
+    }
+    
 }

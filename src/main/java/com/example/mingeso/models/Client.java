@@ -31,7 +31,73 @@ public class Client {
        this.phone=phone;
 
    }
+    public String getId() {
+        return this.id;
+    }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public String getAge() {
+        return this.age;
+    }
+
+    public String getAddress() {
+        return this.address;
+    }
+
+    public String getRut() {
+        return this.rut;
+    }
+    public String getMail() {
+        return this.mail;
+    }
+    public Boolean getRoomOwner() {
+        return this.roomOwner;
+    }
+    public String getPhone() {
+        return this.phone;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName=lastName;
+       return;
+    }
+
+    public void setAge(String age) {
+       this.age=age ;
+       return;
+    }
+
+    public void setAddress(String address) {
+       this.address=address;
+       return;
+    }
+
+    public void setRut(String rut) {
+       this.rut=rut;
+       return;
+    }
+    public void setMail(String mail) {
+       this.mail=mail;
+       return;
+    }
+    public void setPhone(String phone)
+    {
+    this.phone=phone;
+        return;
+    }
+
+    public void setRoomOwner(String roomOwner)
+    {
+    this.roomOwner=roomOwner;
+        return;
+    }
 }
 
 
