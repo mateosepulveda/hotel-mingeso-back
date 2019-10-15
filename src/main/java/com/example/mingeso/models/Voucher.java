@@ -8,8 +8,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.List;
 
 import static java.sql.JDBCType.NULL;
-
+import lombok.NoArgsConstructor;
 @Data
+@NoArgsConstructor
 @Getter
 @Setter
 @Document(collection = "vouchers")

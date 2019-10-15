@@ -5,7 +5,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
 import lombok.Setter;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 @Data
+@NoArgsConstructor
 @Getter
 @Setter
 @Document(collection = "users")
@@ -50,7 +52,7 @@ public class User {
         return;
     }
 
-    public void setPrice(Boolean admin) {
+    public void setAdmin(Boolean admin) {
         this.admin=admin;
         return;
     }

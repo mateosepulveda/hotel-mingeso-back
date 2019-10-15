@@ -94,6 +94,68 @@ private EntityManager entityManager ;
 
 
     }
+    @Test
+    public void ServiceGettersSettersTest() {
+       Service service = new Service();
+        service.setName("Tenis");
+        service.setDescription("Nuevo servicio");
+        service.setPrice("20000");
+        service.setCategory("deporte");
+        
+   assertEquals(service.getName(),"Tenis");
+   assertEquals(service.getDescription(),"Nuevo servicio");
+   assertEquals(service.getPrice(),"20000");
+   assertEquals(service.getCategory(),"deporte");
+
+
+    }
+        @Test
+    public void UserGettersSettersTest() {
+       User user = new User();
+        user.setUsername("Matiti");
+        user.setPassword("123");
+        user.setAdmin(true);
+        
+   assertEquals(user.getUsername(),"Matiti");
+   assertEquals(user.getPassword(),"123");
+   assertEquals(user.getAdmin(),true);
+
+
+
+    }
+
+
+
+            @Test
+    public void VoucherGettersSettersTest() {
+       Voucher voucher = new Voucher();
+        voucher.setPrice("200000");
+        voucher.setStartDate("10/10/2019");
+        voucher.setEndDate("11/10/2019");
+        voucher.setPaidOut(true);
+        voucher.setServices(null);
+        voucher.setBoxUsed(null);
+        voucher.setRoomUsed(null);
+   assertEquals(voucher.getPrice(),"200000");
+   assertEquals(voucher.getStartDate(),"10/10/2019");
+   assertEquals(voucher.getEndDate(),"11/10/2019");
+   assertEquals(voucher.getPaidOut(),true);
+   assertEquals(voucher.getServices(),null);
+   assertEquals(voucher.getBoxUsed(),null);
+   assertEquals(voucher.getRoomUsed(),null);
+
+
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 
