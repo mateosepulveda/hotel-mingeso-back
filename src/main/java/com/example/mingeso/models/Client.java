@@ -93,9 +93,9 @@ public class Client {
         return;
     }
 
-    public void setRoomOwner(String roomOwner)
+    public void setRoomOwner(Boolean roomOwner)
     {
-    this.roomOwner=roomOwner;
+    this.roomOwner= roomOwner;
         return;
     }
 }

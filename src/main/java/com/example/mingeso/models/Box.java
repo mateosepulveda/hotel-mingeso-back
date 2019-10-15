@@ -45,7 +45,7 @@ public List<Service> getServiceList() {
         this.price = price;
     }
 
-    public void setServiceList(String serviceList) {
+    public void setServiceList(List<Service> serviceList) {
         this.serviceList = serviceList;
     }
 }
