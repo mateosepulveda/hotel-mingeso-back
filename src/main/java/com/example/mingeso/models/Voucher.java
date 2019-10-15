@@ -25,7 +25,7 @@ public class Voucher {
     private Room roomUsed;
     private Boolean paidOut;
 
-    public Voucher (String price, List<Service> services, Box boxUsed, Room roomUsed,Client owner ){
+    public Voucher (String price, List<Service> services, Box boxUsed, Room roomUsed,String startDate, String endDate){
         this.price=price;
         this.services=services;
         this.boxUsed=boxUsed;

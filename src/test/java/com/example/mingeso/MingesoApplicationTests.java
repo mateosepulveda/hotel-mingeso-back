@@ -118,7 +118,7 @@ private EntityManager entityManager ;
         
    assertEquals(user.getUsername(),"Matiti");
    assertEquals(user.getPassword(),"123");
-   assertEquals(user.getAdmin(),true);
+   assertEquals(user.getAdmin(),    true);
 
 
 
@@ -146,17 +146,96 @@ private EntityManager entityManager ;
 
 
     }
+    @Test
+    public void RoomConstructorTest() {
+       Room room = new Room("23","2","nueva","25000",null);
+   assertEquals(room.getNumber(),"23");
+   assertEquals(room.getClientList(),null);
+   assertEquals(room.getFloor(),"2");
+   assertEquals(room.getDescription(),"nueva");
+   assertEquals(room.getPrice(),"25000");
+
+
+    }
+
+
+    @Test
+    public void BookingConstructorTest() {
+        Room room =new Room();
+
+       Booking booking = new Booking("matias", "10/12/2019","11/12/2019",room);
+        
+   assertEquals(booking.getOwner(),"matias");
+   assertEquals(booking.getStartDate(),"10/12/2019");
+   assertEquals(booking.getEndDate(),"11/12/2019");
+   assertEquals(booking.getRoom(),room);
+
+
+    }
+
+@Test
+    public void BoxConstructorTest() {
+       Box box = new Box("Package2", "nuevo paquete", "20000", null);
+   assertEquals(box.getName(),"Package2");
+   assertEquals(box.getDescription(),"nuevo paquete");
+   assertEquals(box.getPrice(),"20000");
+   assertEquals(box.getServiceList(),null);
+
+
+    }
+
+    @Test
+    public void ClientConstructorTest() {
+       Client client = new Client("Matias","Pizarro","2","direccion","19700195k","matias.piarro@usach.cl","20192319" );
+   assertEquals(client.getName(),"Matias");
+   assertEquals(client.getLastName(),"Pizarro");
+   assertEquals(client.getAge(),"2");
+   assertEquals(client.getAddress(),"direccion");
+ assertEquals(client.getRoomOwner(),false);
+ assertEquals(client.getMail(),"matias.piarro@usach.cl");
+ assertEquals(client.getRut(),"19700195k");
+ assertEquals(client.getPhone(),"20192319");
+
+
+    }
+    @Test
+    public void ServiceConstructorTest() {
+       Service service = new Service("Tenis","deporte", "20000","Nuevo servicio");
+        service.setName("Tenis");
+        service.setDescription("Nuevo servicio");
+        service.setPrice("20000");
+        service.setCategory("deporte");
+        
+   assertEquals(service.getName(),"Tenis");
+   assertEquals(service.getDescription(),"Nuevo servicio");
+   assertEquals(service.getPrice(),"20000");
+   assertEquals(service.getCategory(),"deporte");
+
+
+    }
+        @Test
+    public void UserConstructorTest() {
+       User user = new User("Matiti","123");  
+   assertEquals(user.getUsername(),"Matiti");
+   assertEquals(user.getPassword(),"123");
+   assertEquals(user.getAdmin(),false);
 
 
 
+    }
 
 
 
+            @Test
+    public void VoucherConstructorTest() {
+                Voucher voucher = new Voucher("200000", null, null, null, "20", "23");
+                assertEquals(voucher.getPrice(), "200000");
+                assertEquals(voucher.getPaidOut(), true);
+                assertEquals(voucher.getServices(), null);
+                assertEquals(voucher.getBoxUsed(), null);
+                assertEquals(voucher.getRoomUsed(), null);
 
 
-
-
-
-
+            }
 
 }
