@@ -12,6 +12,6 @@ public interface RoomRepository extends MongoRepository<Room, String> {
 
     @Override
     List<Room> findAll();
-    Room findByNumber(short number);
-    List<Room> findByFloor(short floor);
+    Room findByNumber(String number);
+    List<Room> findByFloor(String floor);
 }

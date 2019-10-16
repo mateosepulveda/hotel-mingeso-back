@@ -1,9 +1,14 @@
 package com.example.mingeso.models;
 
 import org.springframework.data.annotation.Id;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.NoArgsConstructor;
 @NoArgsConstructor
+@Data
+@Getter
 @Document(collection = "services")
 public class Service {
 
@@ -61,6 +66,6 @@ public class Service {
         this.description=description;
         return;
 
-}
+    }
 }
 

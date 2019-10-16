@@ -1,7 +1,9 @@
 package com.example.mingeso.models;
+import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
 import lombok.NoArgsConstructor;
+@Data
 @NoArgsConstructor
 
 @Document(collection = "clients")
@@ -10,25 +12,25 @@ public class Client {
     private String id;
     private String name;
     private String lastName;
-    private short age;
+    private String age;
     private String address;
     private Boolean roomOwner;
     private String rut;
     private String mail;
     private String phone;
-   // private List<Service> hiredServices= null ;
-   //private List<Package> hiredPackages=null;
-   public Client (String name, String lastName, short age, String address, String rut, String mail, String phone ){
-       this.name=name;
-       this.lastName=lastName;
-       this.age=age;
-       this.address=address;
-       this.rut=rut;
-       this.mail=mail;
-       this.phone=phone;
-       this.roomOwner=false;
+    // private List<Service> hiredServices= null ;
+    //private List<Package> hiredPackages=null;
+    public Client (String name, String lastName, String age, String address, String rut, String mail, String phone ){
+        this.name=name;
+        this.lastName=lastName;
+        this.age=age;
+        this.address=address;
+        this.rut=rut;
+        this.mail=mail;
+        this.phone=phone;
+        this.roomOwner=false;
 
-   }
+    }
     public String getId() {
         return this.id;
     }
@@ -41,7 +43,7 @@ public class Client {
         return this.lastName;
     }
 
-    public short getAge() {
+    public String getAge() {
         return this.age;
     }
 
@@ -64,36 +66,36 @@ public class Client {
 
     public void setLastName(String lastName) {
         this.lastName=lastName;
-       return;
+        return;
     }
 
-    public void setAge(short age) {
-       this.age=age ;
-       return;
+    public void setAge(String age) {
+        this.age=age ;
+        return;
     }
 
     public void setAddress(String address) {
-       this.address=address;
-       return;
+        this.address=address;
+        return;
     }
 
     public void setRut(String rut) {
-       this.rut=rut;
-       return;
+        this.rut=rut;
+        return;
     }
     public void setMail(String mail) {
-       this.mail=mail;
-       return;
+        this.mail=mail;
+        return;
     }
     public void setPhone(String phone)
     {
-    this.phone=phone;
+        this.phone=phone;
         return;
     }
 
     public void setRoomOwner(Boolean roomOwner)
     {
-    this.roomOwner= roomOwner;
+        this.roomOwner= roomOwner;
         return;
     }
 

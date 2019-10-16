@@ -1,4 +1,7 @@
 package com.example.mingeso.models;
+import lombok.Data;
+import lombok.Setter;
+import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -6,7 +9,10 @@ import java.util.List;
 
 import static java.sql.JDBCType.NULL;
 import lombok.NoArgsConstructor;
+@Data
 @NoArgsConstructor
+@Getter
+@Setter
 @Document(collection = "vouchers")
 public class Voucher {
     @Id
@@ -27,13 +33,13 @@ public class Voucher {
         this.paidOut=true;
     }
 
-       public String getId() {
+    public String getId() {
         return this.id;
     }
 
     public String getPrice() {
         return this.price;
-  }
+    }
 
     public List<Service> getServices() {
         return this.services;
@@ -43,7 +49,7 @@ public class Voucher {
         return this.boxUsed;
     }
 
-        public Room getRoomUsed() {
+    public Room getRoomUsed() {
         return this.roomUsed;
     }
 
@@ -58,18 +64,18 @@ public class Voucher {
         return this.endDate;
     }
     public void setPrice(String price) {
-         this.price=price;
+        this.price=price;
         return;
-}
+    }
 
     public void setServices(List<Service> services) {
         this.services=services;
-    return ;
+        return ;
     }
 
     public void setBoxUsed(Box boxUsed) {
 
-         this.boxUsed=boxUsed;
+        this.boxUsed=boxUsed;
         return;
     }
 
@@ -82,10 +88,10 @@ public class Voucher {
         this.endDate = endDate;
     }
 
-        public void setRoomUsed(Room roomUsed) {
+    public void setRoomUsed(Room roomUsed) {
         this.roomUsed= roomUsed;
 
         return ;
     }
-    
+
 }

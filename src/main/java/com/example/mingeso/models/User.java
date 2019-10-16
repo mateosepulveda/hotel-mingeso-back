@@ -2,8 +2,14 @@ package com.example.mingeso.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import lombok.Data;
+import lombok.Setter;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+@Data
 @NoArgsConstructor
+@Getter
+@Setter
 @Document(collection = "users")
 
 public class User {
@@ -19,7 +25,7 @@ public class User {
         this.password=password;
         this.admin= false;
     }
-       public String getId() {
+    public String getId() {
         return this.id;
     }
 
@@ -35,7 +41,7 @@ public class User {
         return this.admin;
     }
 
-   
+
     public void setUsername(String username) {
         this.username=username;
         return;
