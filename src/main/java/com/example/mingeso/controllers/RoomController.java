@@ -12,8 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*")
+
 @RequestMapping("/rooms")
+@CrossOrigin(origins = "*")
 public class RoomController {
 
     @Autowired

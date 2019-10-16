@@ -8,28 +8,29 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-@CrossOrigin(origins = "*")
+
 @RequestMapping("/users")
+@CrossOrigin(origins = "*")
 public class UserController {
+
     @Autowired
 
     private UserRepository userRepository;
-
-    @GetMapping("/")
-    @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
+    @CrossOrigin
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<User> getAllUser() {
         List<User> all = userRepository.findAll();
         return all;
     }
 
-
+    @CrossOrigin
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public User one(@PathVariable("id") String id) {
         User user = userRepository.findByid(id);
         return user;
     }
 
-
+    @CrossOrigin
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     @ResponseBody
     public User updateUser(@PathVariable String id, @RequestBody User user) {
@@ -38,17 +39,16 @@ public class UserController {
         }
         return this.userRepository.save(user);
     }
-
-    @RequestMapping(value = "/", method = RequestMethod.POST)
     @CrossOrigin
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+
     public User create(@Valid @RequestBody User user) {
         userRepository.save(user);
         return user;
     }
-
+    @CrossOrigin
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(value = HttpStatus.OK)
-    @CrossOrigin
     public void delete(@PathVariable String id) {
         userRepository.delete(userRepository.findByid(id));
     }
