@@ -11,12 +11,13 @@ import java.util.List;
 
 @RequestMapping("/users")
 @CrossOrigin(origins = "*")
+@RestController
 public class UserController {
 
     @Autowired
 
     private UserRepository userRepository;
-    @CrossOrigin
+    @CrossOrigin("*")
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<User> getAllUser() {
         List<User> all = userRepository.findAll();
