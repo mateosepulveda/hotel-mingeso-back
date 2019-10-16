@@ -1,7 +1,4 @@
 package com.example.mingeso.models;
-import lombok.Data;
-import lombok.Setter;
-import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,10 +6,7 @@ import java.util.List;
 
 import static java.sql.JDBCType.NULL;
 import lombok.NoArgsConstructor;
-@Data
 @NoArgsConstructor
-@Getter
-@Setter
 @Document(collection = "vouchers")
 public class Voucher {
     @Id

@@ -1,9 +1,7 @@
 package com.example.mingeso.models;
-import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
 import lombok.NoArgsConstructor;
-@Data
 @NoArgsConstructor
 
 @Document(collection = "clients")
@@ -12,7 +10,7 @@ public class Client {
     private String id;
     private String name;
     private String lastName;
-    private String age;
+    private short age;
     private String address;
     private Boolean roomOwner;
     private String rut;
@@ -20,7 +18,7 @@ public class Client {
     private String phone;
    // private List<Service> hiredServices= null ;
    //private List<Package> hiredPackages=null;
-   public Client (String name, String lastName, String age, String address, String rut, String mail, String phone ){
+   public Client (String name, String lastName, short age, String address, String rut, String mail, String phone ){
        this.name=name;
        this.lastName=lastName;
        this.age=age;
@@ -43,7 +41,7 @@ public class Client {
         return this.lastName;
     }
 
-    public String getAge() {
+    public short getAge() {
         return this.age;
     }
 
@@ -69,7 +67,7 @@ public class Client {
        return;
     }
 
-    public void setAge(String age) {
+    public void setAge(short age) {
        this.age=age ;
        return;
     }

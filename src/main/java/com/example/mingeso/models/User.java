@@ -2,14 +2,8 @@ package com.example.mingeso.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import lombok.Data;
-import lombok.Setter;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-@Data
 @NoArgsConstructor
-@Getter
-@Setter
 @Document(collection = "users")
 
 public class User {
