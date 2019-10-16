@@ -27,7 +27,7 @@ public class TestBoxController extends AbstractTest {
         super.setUp();
     }
 
- /*   @Test
+    @Test
     public void getBoxList() throws Exception {
         String uri = "/boxes/";
 
@@ -41,7 +41,7 @@ public class TestBoxController extends AbstractTest {
         Box[] boxList = super.mapFromJson(content, Box[].class);
         assertTrue(boxList.length > 0);
     }
-*/
+
     @Test
     public void createBox() throws Exception {
         String uri = "/boxes/";
@@ -53,7 +53,7 @@ public class TestBoxController extends AbstractTest {
                 .content(inputJson)).andReturn();
 
         int status = mvcResult.getResponse().getStatus();
-        assertEquals(201, status);
+        assertEquals(200, status);
     }
 
     /*@Test

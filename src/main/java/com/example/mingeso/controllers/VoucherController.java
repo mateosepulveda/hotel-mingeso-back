@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+@RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/Vouchers")
 public class VoucherController {

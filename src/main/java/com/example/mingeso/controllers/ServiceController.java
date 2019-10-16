@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
-
+@RestController
 @RequestMapping("/services")
 @CrossOrigin(origins = "*")
+
 public class ServiceController {
     @Autowired
 

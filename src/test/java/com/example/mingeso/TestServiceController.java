@@ -23,19 +23,19 @@ public class TestServiceController extends AbstractTest {
         super.setUp();
     }
 
-  /*  @Test
+   @Test
     public void getServiceList() throws Exception {
         String uri = "/services/";
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
         int status = mvcResult.getResponse().getStatus();
-        assertEquals(201, status);
+        assertEquals(200, status);
         String content = mvcResult.getResponse().getContentAsString();
         Service[] serviceList = super.mapFromJson(content, Service[].class);
         assertTrue(serviceList.length > 0);
     }
-*/
+
     @Test
     public void createService() throws Exception {
         String uri = "/services/";
@@ -46,6 +46,6 @@ public class TestServiceController extends AbstractTest {
                 .content(inputJson)).andReturn();
 
         int status = mvcResult.getResponse().getStatus();
-        assertEquals(201, status);
+        assertEquals(200, status);
     }
 }

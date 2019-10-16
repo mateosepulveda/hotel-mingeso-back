@@ -23,7 +23,7 @@ public class TestUserController extends AbstractTest {
         super.setUp();
     }
 
-    /*@Test
+    @Test
     public void getUserList() throws Exception {
         String uri = "/users/";
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
@@ -35,7 +35,7 @@ public class TestUserController extends AbstractTest {
         User[] userList = super.mapFromJson(content, User[].class);
         assertTrue(userList.length > 0);
     }
-*/
+
     @Test
     public void createUser() throws Exception {
         String uri = "/users/";
@@ -46,6 +46,6 @@ public class TestUserController extends AbstractTest {
                 .content(inputJson)).andReturn();
 
         int status = mvcResult.getResponse().getStatus();
-        assertEquals(201, status);
+        assertEquals(200, status);
     }
 }

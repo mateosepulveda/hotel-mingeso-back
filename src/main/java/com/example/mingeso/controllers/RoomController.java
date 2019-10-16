@@ -15,6 +15,7 @@ import java.util.List;
 
 @RequestMapping("/rooms")
 @CrossOrigin(origins = "*")
+
 public class RoomController {
 
     @Autowired
