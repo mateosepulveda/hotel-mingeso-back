@@ -114,9 +114,13 @@ public class MingesoApplicationTests {
         User user = new User();
         user.setUsername("Matiti");
         user.setPassword("123");
+        user.setMail("matias.pizarro@usach.cl");
+
         user.setAdmin(true);
 
-        assertEquals(user.getUsername(),"Matiti");
+        assertEquals(user.getUsername(),"Mati");
+        assertEquals(user.getMail(),"matias.pizarro@usach.cl");
+        
         assertEquals(user.getPassword(),"123");
         assertEquals(user.getAdmin(),    true);
 
@@ -215,9 +219,11 @@ public class MingesoApplicationTests {
     }
     @Test
     public void UserConstructorTest() throws ParseException{
-        User user = new User("Matiti","123");
+        User user = new User("Matiti","123","matias.pizarro@usach.cl");
         assertEquals(user.getUsername(),"Matiti");
         assertEquals(user.getPassword(),"123");
+        assertEquals(user.getMail(),"matias.pizarro@usach.cl");
+        
         assertEquals(user.getAdmin(),false);
 
 

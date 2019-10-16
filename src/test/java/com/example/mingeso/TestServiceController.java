@@ -39,7 +39,7 @@ public class TestServiceController extends AbstractTest {
     @Test
     public void createService() throws Exception {
         String uri = "/services/";
-        Service service = new Service("Tenis", "deporte", "2000", "descripcion");
+        Service service = new Service("Test", "deporte", "2000", "descripcion");
         String inputJson = super.mapToJson(service);
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(uri)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)

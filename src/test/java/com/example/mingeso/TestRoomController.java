@@ -39,7 +39,7 @@ public class TestRoomController extends AbstractTest {
     @Test
     public void serviceClient() throws Exception {
         String uri = "/clients/";
-        Room room = new Room("421", "2", "descripcion", "5000", null);
+        Room room = new Room("421", "2", "Test room", "5000", null);
         String inputJson = super.mapToJson(room);
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(uri)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)

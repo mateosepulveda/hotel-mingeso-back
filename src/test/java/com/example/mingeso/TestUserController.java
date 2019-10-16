@@ -39,7 +39,7 @@ public class TestUserController extends AbstractTest {
     @Test
     public void createUser() throws Exception {
         String uri = "/users/";
-        User user = new User("javiera", "acevedo");
+        User user = new User("test", "test","test@test.cl");
         String inputJson = super.mapToJson(user);
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(uri)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)

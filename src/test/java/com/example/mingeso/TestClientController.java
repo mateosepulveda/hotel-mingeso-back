@@ -38,8 +38,10 @@ public class TestClientController extends AbstractTest {
     @Test
     public void createClient() throws Exception {
         String uri = "/clients/";
-        Client client = new Client("javiera","acevedo","21","jaja","2019","javiera@","236768271");
-        String inputJson = super.mapToJson(client);
+        Client client = new Client("Test","Test","21","Test","2019","Test@Test.cl","236768271");
+        String inputJson = super.mapToJson   
+        
+           (client);
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(uri)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(inputJson)).andReturn();

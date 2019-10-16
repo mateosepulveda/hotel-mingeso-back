@@ -16,17 +16,23 @@ public class User {
     @Id
     private String id;
     private String username;
+    private String mail;
     private String password;
     private Boolean admin;
 
 
-    public User(String username, String password){
+    public User(String username, String password, String mail){
         this.username=username;
         this.password=password;
+        this.mail=mail;
         this.admin= false;
     }
     public String getId() {
         return this.id;
+    }
+
+    public String getMail(){
+        return this.mail;
     }
 
     public String getUsername() {
@@ -44,6 +50,10 @@ public class User {
 
     public void setUsername(String username) {
         this.username=username;
+        return;
+    }
+    public void setMail(String mail){
+        this.mail=mail;
         return;
     }
 

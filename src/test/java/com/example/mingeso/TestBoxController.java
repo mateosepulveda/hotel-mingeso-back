@@ -46,7 +46,7 @@ public class TestBoxController extends AbstractTest {
     public void createBox() throws Exception {
         String uri = "/boxes/";
         List<Service> services = null;
-        Box box = new Box("Fultol-Tenis","Pelota-raqueta","2100",services);
+        Box box = new Box("Test-box","Pelota-raqueta","2100",services);
         String inputJson = super.mapToJson(box);
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(uri)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
