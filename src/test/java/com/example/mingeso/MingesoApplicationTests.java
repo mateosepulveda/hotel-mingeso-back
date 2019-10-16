@@ -112,7 +112,7 @@ public class MingesoApplicationTests {
     @Test
     public void UserGettersSettersTest() throws ParseException{
         User user = new User();
-        user.setUsername("Matiti");
+        user.setUsername("Mati");
         user.setPassword("123");
         user.setMail("matias.pizarro@usach.cl");
 
