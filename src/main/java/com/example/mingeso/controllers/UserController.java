@@ -15,7 +15,8 @@ public class UserController {
 
     private UserRepository userRepository;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @GetMapping("/")
+    @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
     public List<User> getAllUser() {
         List<User> all = userRepository.findAll();
         return all;
