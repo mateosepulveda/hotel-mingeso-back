@@ -2,6 +2,7 @@ package com.example.mingeso;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.example.mingeso.models.Room;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +16,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import com.example.mingeso.models.Client;
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TestClientController extends AbstractTest {
+public class TestRoomController extends AbstractTest {
     @Override
     @Before
     public void setUp() {
@@ -23,23 +24,23 @@ public class TestClientController extends AbstractTest {
     }
 
     @Test
-    public void getClientList() throws Exception {
-        String uri = "/clients/";
+    public void getRoomList() throws Exception {
+        String uri = "/rooms/";
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
         int status = mvcResult.getResponse().getStatus();
         assertEquals(200, status);
         String content = mvcResult.getResponse().getContentAsString();
-        Client[] clientList = super.mapFromJson(content, Client[].class);
-        assertTrue(clientList.length > 0);
+        Room[] roomList = super.mapFromJson(content, Room[].class);
+        assertTrue(roomList.length > 0);
     }
 
     @Test
-    public void createClient() throws Exception {
+    public void serviceClient() throws Exception {
         String uri = "/clients/";
-        Client client = new Client("javiera","acevedo","21","jaja","2019","javiera@","236768271");
-        String inputJson = super.mapToJson(client);
+        Room room = new Room("421", "2", "descripcion", "5000", null);
+        String inputJson = super.mapToJson(room);
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(uri)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(inputJson)).andReturn();
@@ -48,22 +49,4 @@ public class TestClientController extends AbstractTest {
         assertEquals(200, status);
     }
 
-    /*@Test
-    public void updateProduct() throws Exception {
-        String uri = "/clients/5da260e49371d42cb7cfe260";
-        Client client = new Client();
-        client.setName("Lemon");
-        String inputJson = super.mapToJson(client);
-, status);
-    }
-
-    @Test
-    public void deleteProduct() throws Exception {
-        String uri = "/clients/5da260e39371d42cb7cfe25f";
-        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.delete(uri)).andReturn();
-        int status = mvcResult.getResponse().getStatus();
-        assertEquals(404, status);
-
-
-    }*/
 }

@@ -1,15 +1,10 @@
 package com.example.mingeso.controllers;
-
-import com.sun.org.apache.xpath.internal.objects.XObject;
-import org.openqa.selenium.json.Json;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import com.example.mingeso.models.Booking;
 import com.example.mingeso.repositories.BookingRepository;
 import javax.validation.Valid;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

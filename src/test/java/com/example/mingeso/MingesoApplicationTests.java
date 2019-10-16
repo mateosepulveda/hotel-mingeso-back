@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
+import java.text.ParseException;
 import javax.persistence.EntityManager;
 
 import static org.junit.Assert.assertEquals;
@@ -20,9 +20,8 @@ private String nueva="nueva";
 
 
     @Test
-    public void RoomGettersSettersTest() {
+    public void RoomGettersSettersTest() throws ParseException {
        Room room = new Room();
-        Byte capacity = 2;
         room.setNumber("23");
         room.setFloor("2");
         room.setDescription(nueva);
@@ -40,7 +39,7 @@ private String nueva="nueva";
 
 
     @Test
-    public void BookingGettersSettersTest() {
+    public void BookingGettersSettersTest() throws ParseException {
        Booking booking = new Booking();
         Room room =new Room();
         booking.setOwner("matias");
@@ -57,7 +56,7 @@ private String nueva="nueva";
     }
 
 @Test
-    public void BoxGettersSettersTest() {
+    public void BoxGettersSettersTest()throws ParseException {
        Box box = new Box();
         box.setName("Package2");
         box.setDescription("Nuevo paquete");
@@ -73,7 +72,7 @@ private String nueva="nueva";
     }
 
     @Test
-    public void ClientGettersSettersTest() {
+    public void ClientGettersSettersTest()throws ParseException {
        Client client = new Client();
         client.setName("Matias");
         client.setLastName("Pizarro");
@@ -96,7 +95,7 @@ private String nueva="nueva";
 
     }
     @Test
-    public void ServiceGettersSettersTest() {
+    public void ServiceGettersSettersTest()throws ParseException {
        Service service = new Service();
         service.setName("Tenis");
         service.setDescription("Nuevo servicio");
@@ -111,7 +110,7 @@ private String nueva="nueva";
 
     }
         @Test
-    public void UserGettersSettersTest() {
+    public void UserGettersSettersTest() throws ParseException{
        User user = new User();
         user.setUsername("Matiti");
         user.setPassword("123");
@@ -128,7 +127,7 @@ private String nueva="nueva";
 
 
             @Test
-    public void VoucherGettersSettersTest() {
+    public void VoucherGettersSettersTest() throws ParseException{
        Voucher voucher = new Voucher();
         voucher.setPrice("200000");
         voucher.setStartDate("10/10/2019");
@@ -148,7 +147,7 @@ private String nueva="nueva";
 
     }
     @Test
-    public void RoomConstructorTest() {
+    public void RoomConstructorTest() throws ParseException{
        Room room = new Room("23","2",nueva,"25000",null);
    assertEquals(room.getNumber(),"23");
    assertEquals(room.getClientList(),null);
@@ -161,7 +160,7 @@ private String nueva="nueva";
 
 
     @Test
-    public void BookingConstructorTest() {
+    public void BookingConstructorTest()throws ParseException {
         Room room =new Room();
 
        Booking booking = new Booking("matias", "10/12/2019","11/12/2019",room);
@@ -175,7 +174,7 @@ private String nueva="nueva";
     }
 
 @Test
-    public void BoxConstructorTest() {
+    public void BoxConstructorTest() throws ParseException{
        Box box = new Box("Package2", "nuevo paquete", "20000", null);
    assertEquals(box.getName(),"Package2");
    assertEquals(box.getDescription(),"nuevo paquete");
@@ -186,7 +185,7 @@ private String nueva="nueva";
     }
 
     @Test
-    public void ClientConstructorTest() {
+    public void ClientConstructorTest()throws ParseException {
        Client client = new Client("Matias","Pizarro","2","direccion","19700195k","matias.piarro@usach.cl","20192319" );
    assertEquals(client.getName(),"Matias");
    assertEquals(client.getLastName(),"Pizarro");
@@ -200,7 +199,7 @@ private String nueva="nueva";
 
     }
     @Test
-    public void ServiceConstructorTest() {
+    public void ServiceConstructorTest() throws ParseException{
        Service service = new Service("Tenis","deporte", "20000","Nuevo servicio");
         service.setName("Tenis");
         service.setDescription("Nuevo servicio");
@@ -215,7 +214,7 @@ private String nueva="nueva";
 
     }
         @Test
-    public void UserConstructorTest() {
+    public void UserConstructorTest() throws ParseException{
        User user = new User("Matiti","123");  
    assertEquals(user.getUsername(),"Matiti");
    assertEquals(user.getPassword(),"123");
@@ -228,7 +227,7 @@ private String nueva="nueva";
 
 
             @Test
-    public void VoucherConstructorTest() {
+    public void VoucherConstructorTest() throws ParseException{
                 Voucher voucher = new Voucher("200000", null, null, null, "20", "23");
                 assertEquals(voucher.getPrice(), "200000");
                 assertEquals(voucher.getPaidOut(), true);

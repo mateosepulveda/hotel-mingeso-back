@@ -2,6 +2,8 @@ package com.example.mingeso;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.example.mingeso.models.Box;
+import com.example.mingeso.models.Service;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,39 +15,45 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.example.mingeso.models.Client;
+
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TestClientController extends AbstractTest {
+public class TestBoxController extends AbstractTest {
     @Override
     @Before
     public void setUp() {
         super.setUp();
     }
 
-    @Test
-    public void getClientList() throws Exception {
-        String uri = "/clients/";
+ /*   @Test
+    public void getBoxList() throws Exception {
+        String uri = "/boxes/";
+
+
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
         int status = mvcResult.getResponse().getStatus();
         assertEquals(200, status);
         String content = mvcResult.getResponse().getContentAsString();
-        Client[] clientList = super.mapFromJson(content, Client[].class);
-        assertTrue(clientList.length > 0);
+        Box[] boxList = super.mapFromJson(content, Box[].class);
+        assertTrue(boxList.length > 0);
     }
-
+*/
     @Test
-    public void createClient() throws Exception {
-        String uri = "/clients/";
-        Client client = new Client("javiera","acevedo","21","jaja","2019","javiera@","236768271");
-        String inputJson = super.mapToJson(client);
+    public void createBox() throws Exception {
+        String uri = "/boxes/";
+        List<Service> services = null;
+        Box box = new Box("Fultol-Tenis","Pelota-raqueta","2100",services);
+        String inputJson = super.mapToJson(box);
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(uri)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(inputJson)).andReturn();
 
         int status = mvcResult.getResponse().getStatus();
-        assertEquals(200, status);
+        assertEquals(201, status);
     }
 
     /*@Test

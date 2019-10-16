@@ -1,11 +1,7 @@
 package com.example.mingeso.models;
-import com.github.javafaker.Bool;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
-//import javax.persistence.*;
-import java.util.List;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
